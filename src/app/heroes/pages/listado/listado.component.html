@@ -1,0 +1,30 @@
+
+<h1>Listado de Héroes</h1>
+
+<mat-divider></mat-divider>
+<br>
+
+
+<!-- wrap que cuando ya no quepa pase a otra linea -->
+<!-- fxLayoutGap="20px" Separación de 20px en forma horizontal -->
+<div fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="20px">
+
+    <!-- cada uno tiene el tamaño de 30% del espacio disponible -->
+    <!-- en pantallas lg tome el 15% -->
+    <div fxFlex="30"
+        fxFlex.lg="20" 
+        *ngFor="let heroe of heroes">
+
+        <!-- CARD -->
+        <app-tarjeta [heroe]="heroe"></app-tarjeta>
+
+    </div>
+
+
+</div>
+
+
+

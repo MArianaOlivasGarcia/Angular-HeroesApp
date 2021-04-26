@@ -1,0 +1,77 @@
+
+<!-- fullscreen - ocupe toda la pantalla -->
+<mat-sidenav-container fullscreen>
+
+
+
+    <!-- que haga el efecto del push mode="push" -->
+    <mat-sidenav #sidenav
+                 mode="push">
+        <mat-toolbar color="primary">
+
+            <span>Menú</span>
+
+            <span class="spacer"></span>
+
+            <button mat-icon-button
+                    (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+        </mat-toolbar>
+
+
+        <mat-nav-list>
+            <a routerLink="./listado" 
+               mat-list-item
+               (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de Héroes</span>
+            </a>
+            <a routerLink="./agregar" 
+               mat-list-item
+               (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Añadir Héroe</span>
+            </a>
+            <a routerLink="./buscar" 
+               mat-list-item
+               (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>search</mat-icon>
+                <span>Buscar Héroe</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+
+    <!-- cuando le de clic se abra o cierre el sidenav -->
+    <mat-toolbar color="primary">
+
+        <button mat-icon-button
+                (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+
+
+        <span>{{ auth.usuario }} </span>
+
+        <button mat-button
+                (click)="logout()">
+            Logout
+        </button>
+
+    </mat-toolbar>
+
+        
+
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
+
